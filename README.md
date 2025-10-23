@@ -269,10 +269,13 @@ encoded_key = base64.b64encode(f"{api_key}:{api_secret}".encode()).decode()
 - AI-driven recommendation system for cross-domain insights 🤖  
 - Gamified collaboration to increase engagement 🎮  
 - Expanded integration with other scientific APIs 🔬  
-- Real-time analytics dashboards for all sessions 📊  
+- Real-time analytics dashboards for all sessions 📊
+
+  
 </details>
+
 ```
-```
+
                                        🌐 **Users / Clients**
                                       ┌─────────────────┐
                                       │  Web / Mobile   │
@@ -326,4 +329,5 @@ encoded_key = base64.b64encode(f"{api_key}:{api_secret}".encode()).decode()
                                        │ *Docker / Kubernetes*    │
                                        │ *GPU / Scalable Storage* │
                                        └─────────────────────────┘
-```
+                                       ```
+
