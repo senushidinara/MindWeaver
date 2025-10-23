@@ -38,6 +38,81 @@ Imagine a space where ideas flow seamlessly from human insight 🧠 to AI augmen
 
 ## 🏗️ Technical Implementation
 MindWeaver integrates multiple AI engines 🤖, human feedback loops 🧠, knowledge synthesis 🌐, and visualization 🎨 in a cloud-native ☁️ architecture:
+# ⚡ Fiverren & 📊 ElasticSearch Integration in MindWeaver
+
+## 🌐 Real-Time Collaboration with Fiverren
+
+Fiverren powers seamless **human-AI collaboration** within MindWeaver:  
+
+- Creates real-time sessions for teams of humans and AI agents  
+- Sends messages, updates, and feedback dynamically  
+- Ensures that ideas evolve through continuous interactive sessions  
+
+**Usage Example:**
+
+```python
+from services.fiverren_client import FiverrenClient
+
+fiv_client = FiverrenClient()
+session = fiv_client.create_session("ProteinFoldingTeam", ["user1", "ai_agent1"])
+fiv_client.send_message(session_id=session["id"], user_id="user1", message="Explore new folding patterns!")
+updates = fiv_client.get_session_updates(session_id=session["id"])
+print(updates)
+```
+**Fiverren ⚡ ensures real-time coordination and collaboration, making AI-human teamwork instant and actionable.
+
+---
+
+📊 **Knowledge Management with ElasticSearch**
+
+ElasticSearch provides a cross-domain knowledge graph for MindWeaver:
+
+- Indexes structured documents from human-AI collaboration sessions  
+- Enables powerful search across ideas, insights, and historical data  
+- Helps synthesize new innovations by connecting unrelated domains
+🔑 Environment Variables
+## 🔑 Fiverren API Key Handling
+
+Fiverren requires both an **API Key** and **API Secret**. For security:
+
+- **Unencoded keys** and **Base64-encoded keys** will **not** be displayed after a page reload  
+- Always store keys securely, e.g., in environment variables or a secret manager  
+- Example environment variables:
+- FIVERREN_API_KEY
+FIVERREN_API_SECRET
+FIVERREN_API_KEY_BASE6
+- Base64 encoding can be done in Python as:
+
+```python
+import base64
+api_key = "YOUR_API_KEY"
+api_secret = "YOUR_API_SECRET"
+encoded_key = base64.b64encode(f"{api_key}:{api_secret}".encode()).decode()
+print(encoded_key)  # Store securely, do not expose
+```
+🔑 ElasticSearch Cloud Access
+
+ElasticSearch uses a Cloud ID and API Key to connect securely:
+from elasticsearch import Elasticsearch
+
+cloud_id = "YOUR_ELASTIC_CLOUD_ID"
+api_key = "YOUR_ELASTIC_API_KEY"
+
+es = Elasticsearch(
+    cloud_id=cloud_id,
+    api_key=api_key
+)
+
+# Example indexing
+es.index(index="protein_folding", document={
+    "title": "Novel Folding Pattern",
+    "content": "AI-discovered structure",
+    "tags": ["protein", "AI"]
+})
+
+# Example search
+results = es.search(index="protein_folding", query={"match": {"title": "folding"}})
+print(results)
 
 ```python
 class MindWeaver:
