@@ -259,7 +259,7 @@ encoded_key = base64.b64encode(f"{api_key}:{api_secret}".encode()).decode()
 | Community Solution Adoption | 30% | 75% |
 | Artistic Output Innovation | Medium | Very High |
 
-> Judges will immediately see the **quantifiable impact** of the platform.  
+> **quantifiable impact** of the platform.  
 </details>
 
 <details>
